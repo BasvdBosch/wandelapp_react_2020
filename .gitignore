@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /.idea
-src/modules/keytext.js
+src/modules/keytext_AANPASSEN.js
