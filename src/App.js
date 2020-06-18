@@ -29,10 +29,6 @@ class App extends Component {
     this.setState({selectedRoute:route});
   }
 
-  // togglePopup() {
-  //   this.setState({showPopup: !this.state.showPopup});
-  // }
-
   render() {
     const style = {
       display: 'flex',
@@ -44,7 +40,8 @@ class App extends Component {
           <button onClick={() => this.setState({isOpen : true})}>Informatie over app</button>
           <Popup isOpen={this.state.isOpen} onClose={() => this.setState ({isOpen: false})}>
           Deze app is een hulpmiddel voor wandelaars. Met onze app kunt u een route selecteren.
-              Met de marker van de app kunt u precies zien waar u bent zodat uw de route van de wandeling niet vergeet. </Popup>
+              Met de marker van de app kunt u precies zien waar u bent zodat uw de route van de wandeling niet vergeet.
+          In de app zult zal u bovenaan een kaart zien met daarop u huidige locatie. </Popup>
           <Info show={true} msg={this.state.msg}  />
           <MapRoute onMessage={this.handleInfoChange.bind(this)} geojson={this.state.selectedRoute}/>
           <UploadRoute onUpdated={this.handleUploadInfo.bind(this)}/>

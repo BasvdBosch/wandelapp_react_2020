@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import {posttextfile} from './rest_routes';
 
+
+let uploadButtonStyle = {
+    color: 'black',
+    borderRadius: '5px',
+    width: '100px',
+    height: '50px'
+};
 class UploadRoute extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +21,7 @@ class UploadRoute extends Component {
     this.setState({
       selectedFile: file
     });
-  }
+  };
 
   fileUploadHandler = () => {
     const cuid = 'test';
@@ -38,7 +45,7 @@ class UploadRoute extends Component {
     return (
       <div>
         <input type="file" onChange={this.onChangeHandler} />
-        <button type="button" onClick={this.fileUploadHandler}>Upload File</button>
+        <button style={uploadButtonStyle} type="button" onClick={this.fileUploadHandler}>Upload File</button>
       </div>
     );
   }
