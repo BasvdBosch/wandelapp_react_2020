@@ -31,9 +31,7 @@ class Routes extends Component {
         ;
     }
 
-    delRoutes() {
 
-    }
 
     componentDidMount() {
         this.getRoutes();
@@ -51,8 +49,12 @@ class Routes extends Component {
         }
     }
 
-    selectRoute = (data) => {
+    selectRoute(data) {
         this.props.onRouteSelect(data.json);
+    }
+
+    delRoute(id) {
+        console.log(id);
     }
 
     render() {
@@ -65,9 +67,18 @@ class Routes extends Component {
                     {this.state.routes.map(route =>
                         <li onClick={this.selectRoute.bind(this, route.data)}
                             key={route.data._id}>{route.data.json.features[0].properties.name}
-                            <button onClick={console.log(route.data.json.features[0].properties.name)}>Delete</button>
+
                         </li>
                     )}
+                </ul>
+                <ul>
+                    {this.state.routes.map(route =>
+                        <li onClick={this.delRoute.bind(this,route.data._id)}
+                            key={route.data._id}>{route.data.json.features[0].properties.name}
+
+                        </li>
+
+                        )}
                 </ul>
             </div>
         );
